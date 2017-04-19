@@ -35,9 +35,12 @@
 		<!-- Maximum number of classes that can be missed per project -->
 		<max.classes.missed>1</max.classes.missed>
 		<!--Target instruction coverage -->
-		<min.instruction.coverage>0.99</min.instruction.coverage>
+		<min.instruction.coverage>0.95</min.instruction.coverage>
+		<exclusion.suffix></exclusion.suffix>
+		<excludedPackage></excludedPackage>
+	
 		<!--  Package which contains classes not included for code coverage calculation -->
-		<excludedPackage>ie/aib/msf/core/model/**/*</excludedPackage>
+		<!--<excludedPackage>ie/aib/msf/model/**/*</excludedPackage> -->
 		<sonar.plugin.version>2.7.1</sonar.plugin.version>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin</sonar.password>
@@ -69,10 +72,11 @@
 	   	              <skipTests>${skipTests}</skipTests>
 					  <!--identify the unit tests -->
 		                <includes>
-		                    <include>**/*Test*.java</include>
+		                    <include>**/*Test.java</include>
 		                </includes>
 		                <excludes>
 		                	<exclude>**/*IT.java</exclude>
+							<exclude>**/model/*</exclude>
 		                </excludes> 
 	                </configuration>
 	              </execution>
@@ -97,17 +101,17 @@
 			                </configuration>
 		               </execution>
 					   <execution>
-		                    <id>post-test</id>
-			                <phase>test</phase>
-			                <goals>
+		                  <id>post-test</id>
+			               <phase>test</phase>
+			               <goals>
 			                  <goal>check</goal>
 			                  <goal>report</goal>
-			                </goals>
-		              		 <configuration>
+			               </goals>
+		              	   <configuration>
 			                  <excludes>
 								<exclude>**/IT*.java</exclude>
 								<exclude>**/*IT.java</exclude>
-							    <exclude>${excludedPackage}</exclude>
+							    <exclude>**/model/*</exclude>
 							   </excludes> 
 			                  <!-- output file with report data.session.executionRootDirectory -->
 			                  <dataFile>${project.build.directory}/jacoco-ut.exec</dataFile> <!-- targets to the site folder the xml and html reports -->
@@ -135,8 +139,8 @@
 							  		   </limits>
 								 </rule>
 						    </rules>
-	              		 </configuration>
-	                  </execution>
+	              		   </configuration>
+	                    </execution>
 				 </executions>
 	          </plugin>
         	</plugins>
@@ -169,6 +173,7 @@
 				                </includes>
 				                <excludes>
 				               		 <exclude>**/*Test.java</exclude>
+									 <exclude>**/model/*</exclude>
 				                </excludes> 
 			           	    	<argLine>${failsafeArgLine} -XX:PermSize=128m -XX:MaxPermSize=512m -XX:-UseSplitVerifier -noverify</argLine>
 						</configuration>
@@ -203,7 +208,7 @@
 	                <configuration>
 	                 <excludes>
 					 	<exclude>**/*Test.java</exclude>
-						<exclude>${excludedPackage}</exclude>
+						<exclude>**/model/*</exclude>
 					  </excludes> 
 	                  <!-- output file with report data.session.executionRootDirectory -->
 	                  <dataFile>${project.build.directory}/jacoco-it.exec</dataFile> <!-- targets to the site folder the xml and html reports -->
