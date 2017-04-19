@@ -4,11 +4,8 @@
 
   <groupId>ie.aib.msf</groupId>
   <artifactId>Demo</artifactId>
-  <version>0.0.0-SNAPSHOT</version>
+  <version>0.0.10-SNAPSHOT</version>
   <!--  <packaging>jar</packaging> -->
-
-  <name>Demo</name>
-  <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -238,7 +235,57 @@
         	</plugins>
        	</build>
 	</profile>
+	
+	
+	
+	 <profile>
+		<id>deploy-snapshot</id> 
+		<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8</version>
+				<executions>
+					<execution>
+						<phase>default-deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+						<configuration>
+							<packaging>jar</packaging>
+							<generatePom>true</generatePom>
+							<url>${project.distributionManagement.snapshotRepository.url}</url>
+							<artifactId>${project.artifactId}</artifactId>
+							<groupId>${project.groupId}</groupId>
+							<version>${project.version}</version>
+							<file>${project.build.directory}/${project.artifactId}-${project.version}.jar</file>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+        </plugins>
+       	</build>
+  </profile>
  </profiles>
+
+ 
+  <!-- Deployment to Nexus-->
+  <distributionManagement>
+    <snapshotRepository>
+      <id>maven-snapshot-repository-Test</id>
+      <name>maven-snapshots</name>
+      <url>http://localhost:8082/repository/maven-snapshots</url>
+    </snapshotRepository>
+   
+    <repository>
+      <id>maven-release-repository-Test</id>
+      <name>maven-release</name>
+      <url>http://localhost:8082/repository/maven-release</url>
+    </repository>
+  </distributionManagement>
+ 
+ 
  
   <build>
      <pluginManagement>
@@ -256,9 +303,6 @@
         </pluginManagement>   
     </build>
 
-
-
-
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -267,4 +311,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+ 
+  
 </project>
