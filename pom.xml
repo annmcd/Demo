@@ -46,7 +46,7 @@
 		<!--AMD end property additions-->
   </properties>
  
- <profiles>
+  <profiles>
    <profile>
 	<id>unit-tests</id>
 		<build>
