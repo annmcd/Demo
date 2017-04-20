@@ -298,8 +298,7 @@
 			<artifactId>build-helper-maven-plugin</artifactId>
 			<version>3.0.0</version>
 		 </plugin>
-		 
-	      <plugin>
+	     <plugin>
 	       	  <groupId>junit</groupId>
 			  <artifactId>junit</artifactId>
 			  <version>4.11</version>
@@ -316,7 +315,6 @@
 				</manifest>
 				 <manifestEntries>
 				  <url>${project.url}</url>
-				  <pipeline>${despipeline.version}</pipeline>
 				</manifestEntries>
 			  </archive>
 			</configuration>
@@ -334,10 +332,8 @@
 			</plugin>
 	   </plugins>
 
-     <pluginManagement>
-	         <plugins>
-			  
-	          </plugins>
+		<pluginManagement>
+	         <plugins></plugins>
         </pluginManagement>   
     </build>
 
