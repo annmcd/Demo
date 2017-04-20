@@ -316,7 +316,7 @@
 				</manifest>
 				 <manifestEntries>
 				  <url>${project.url}</url>
-				  <pipelineVersion>${pipeline.version}</pipelineVersion>
+				  <pipeline>${pipeline}</pipeline>
 				</manifestEntries>
 			  </archive>
 			</configuration>
