@@ -293,44 +293,36 @@
 			<groupId>org.codehaus.mojo</groupId>
 			<artifactId>build-helper-maven-plugin</artifactId>
 			<version>3.0.0</version>
-			</plugin>
+		 </plugin>
+		 
 	      <plugin>
 	       	  <groupId>junit</groupId>
 			  <artifactId>junit</artifactId>
 			  <version>4.11</version>
 	      </plugin>
+		  
 		  <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-jar-plugin</artifactId>
 			<version>2.4</version>
 			</plugin>
-	      <plugin>
+	    
 		  <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-install-plugin</artifactId>
 			<version>2.4</version>
-			</plugin>
+		  </plugin>
+		  
 	      <plugin>
-		  <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-deploy-plugin</artifactId>
-			<version>2.6</version>
+			<version>2.8</version>
 			</plugin>
-	      <plugin>
 	   </plugins>
 
      <pluginManagement>
 	         <plugins>
-			  <plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>3.0.0</version>
-				</plugin>
-	          	<plugin>
-	       		   <groupId>junit</groupId>
-			      <artifactId>junit</artifactId>
-			      <version>4.11</version>
-	        	 </plugin>
+			  
 	          </plugins>
         </pluginManagement>   
     </build>
