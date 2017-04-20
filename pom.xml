@@ -51,6 +51,35 @@
   </properties>
  
   <profiles>
+  
+  	<profile>
+		<id>find-bugs</id>
+		<build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>3.0.3</version>
+                <configuration>
+                    <effort>Max</effort>
+                    <threshold>Low</threshold>
+                    <failOnError>true</failOnError>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>analyze-compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+  
+  
    <profile>
 	<id>unit-tests</id>
 		<build>
@@ -144,8 +173,8 @@
 	                    </execution>
 				 </executions>
 	          </plugin>
-        	</plugins>
-       	</build>
+        </plugins>
+      </build>
 	</profile>
 	
 	
@@ -216,12 +245,10 @@
 	                  <!-- output directory for the site HTML and xml reports. -->
 	                  <outputDirectory>${project.reporting.outputDirectory}/jacoco-it</outputDirectory>
 	                   <rules>
-						  <!--  Require overall instruction coverage of minInstructionCoverage %, and don't allow any classes to be missed -->
 						  <rule>
 						    <element>BUNDLE</element>
 						     <excludes>
-							 <!--exclude the unit tests-->
-						     <exclude>*Test</exclude>
+	  					       <exclude>*Test</exclude>
 						    </excludes>
 						    <limits>
 						      <limit>
@@ -240,7 +267,31 @@
        	</build>
 	</profile>
 	
-	
+	<profile>
+	  <id>style-check</id>
+		<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.9.1</version>
+				<executions>
+					<execution>
+					<id>checkstyle</id>
+					<phase>validate</phase>
+					<goals>
+						<goal>check</goal>
+					</goals>
+					<configuration>
+						<failOnViolation>true</failOnViolation>
+					</configuration>
+					</execution>
+				</executions>
+			</plugin> 
+		 </plugins>
+		</build>
+	</profile>
+	</profile>
 	
 	 <profile>
 		<id>deploy-snapshot</id> 
