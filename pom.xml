@@ -5,12 +5,16 @@
   <groupId>ie.aib.msf</groupId>
   <artifactId>Demo</artifactId>
   <version>0.0.11</version>
-  <!--  <packaging>jar</packaging> -->
+  <url>https://aib.ie</url>
+  <organization>
+    <name>Allied Irish Bank PLC</name>
+  </organization>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   
   	 <!--AMD start properties -->
+		<pipeline.version></pipeline.version>
 		<maven.surefire.plugin.version>2.4.3</maven.surefire.plugin.version>
 
 	<!--AMD Provide Sonar with the jacoco output -->
@@ -300,14 +304,24 @@
 			  <artifactId>junit</artifactId>
 			  <version>4.11</version>
 	      </plugin>
-		  
 		  <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-jar-plugin</artifactId>
 			<version>2.4</version>
-			</plugin>
-	    
-		  <plugin>
+		    <configuration>
+			  <archive>
+				<manifest>
+				  <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+				  <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+				</manifest>
+				 <manifestEntries>
+				  <url>${project.url}</url>
+				  <pipelineVersion>${pipeline.version}</pipelineVersion>
+				</manifestEntries>
+			  </archive>
+			</configuration>
+		 </plugin>
+     	 <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-install-plugin</artifactId>
 			<version>2.4</version>
