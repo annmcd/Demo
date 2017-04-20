@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ie.aib.msf</groupId>
-  <artifactId>Demo</artifactId>
-  <version>0.0.11</version>
-  <url>https://aib.ie</url>
+  <artifactId>my-demo-ms</artifactId>
+  <version>0.0.0-SNAPSHOT</version>
   <organization>
     <name>Allied Irish Bank PLC</name>
   </organization>
-
+  <url>https://aib.ie</url>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   
@@ -316,7 +316,7 @@
 				</manifest>
 				 <manifestEntries>
 				  <url>${project.url}</url>
-				  <pipeline>${pipeline}</pipeline>
+				  <pipeline>${pipeline.version}</pipeline>
 				</manifestEntries>
 			  </archive>
 			</configuration>
