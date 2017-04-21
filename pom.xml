@@ -224,8 +224,8 @@
 									</excludes> 
 									<argLine>${failsafeArgLine} -XX:PermSize=128m -XX:MaxPermSize=512m -XX:-UseSplitVerifier -noverify</argLine>
 							</configuration>
-						 </execution>
-					  </executions>
+						</execution>
+					</executions>
 				  </plugin>
 				  <plugin>
 					<groupId>org.jacoco</groupId>
@@ -366,13 +366,13 @@
 			<artifactId>build-helper-maven-plugin</artifactId>
 			<version>3.0.0</version>
 		 </plugin>
-	     <plugin>
+	    <!-- <plugin>
 	       	  <groupId>junit</groupId>
 			  <artifactId>junit</artifactId>
 			  <version>4.11</version>
-	      </plugin>
+	      </plugin> -->
 		  <plugin>
-			<groupId>org.apache.maven.plugins</groupId>
+		    <groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-jar-plugin</artifactId>
 			<version>2.4</version>
 		    <configuration>
