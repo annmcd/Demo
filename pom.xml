@@ -52,7 +52,7 @@
   
   <scm>
    <connection>scm:git:https://github.com/annmcd/Demo.git</connection>
-   <url>http://github.com/annmcd/project/Demo</url>
+   <url>http://github.com/annmcd</url>
    <developerConnection>scm:git:https://github.com/annmcd/Demo.git</developerConnection>
    <tag>v0.0.0</tag>
   </scm>
