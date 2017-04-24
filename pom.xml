@@ -3,7 +3,7 @@
 
   <groupId>ie.aib.msf</groupId>
   <artifactId>my-demo-ms</artifactId>
-  <version>0.0.8-SNAPSHOT</version>
+  <version>v\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.incrementalVersion}</version>
   <organization>
     <name>Allied Irish Bank PLC</name>
   </organization>
@@ -17,7 +17,7 @@
 		<maven.surefire.plugin.version>2.4.3</maven.surefire.plugin.version>
 
  	<!-- Artefact Release Properties -->
-		<semanticVersion></semanticVersion>
+		<semanticVersion />
         <buildVersion>+build</buildVersion>
 		<devVersion>      </devVersion>
 		
@@ -61,7 +61,7 @@
    <connection>scm:git:https://github.com/annmcd/Demo.git</connection>
    <url>http://github.com/annmcd</url>
    <developerConnection>scm:git:https://github.com/annmcd/Demo.git</developerConnection>
-   <tag>my-demo-ms-1.99.9</tag>
+   <tag>v\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.incrementalVersion}</tag>
   </scm>
   
  
