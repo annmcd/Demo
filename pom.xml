@@ -3,7 +3,7 @@
 
   <groupId>ie.aib.msf</groupId>
   <artifactId>my-demo-ms</artifactId>
-  <version>0.0.8-SNAPSHOT</version>
+  <version>1.99.9-SNAPSHOT</version>
   <organization>
     <name>Allied Irish Bank PLC</name>
   </organization>
@@ -13,11 +13,18 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   
   	 <!--AMD start properties -->
-		<despipeline.version />
+		<!--<despipeline.version />-->
 		<maven.surefire.plugin.version>2.4.3</maven.surefire.plugin.version>
 
+ 	<!-- Artefact Release Properties -->
+		<artefact.releaseVersion></artefactreleaseVersion>
+		<artefact.developmenVersion></artefact.developmenVersion>
+		
+		
 	<!--AMD Provide Sonar with the jacoco output -->
-		<failFlag>true</failFlag>
+		<failFlag>true</failFlag> <!-- allows us to test pipeline with projects which contain inadequate quality standards and proceed regardless-->
+		
+		
 		<jacoco-maven-plugin.version>0.7.2.201409121644</jacoco-maven-plugin.version>
 		<failsafe.version>2.15</failsafe.version>
 		<findbugs.version>3.0.4</findbugs.version>
@@ -54,7 +61,7 @@
    <connection>scm:git:https://github.com/annmcd/Demo.git</connection>
    <url>http://github.com/annmcd</url>
    <developerConnection>scm:git:https://github.com/annmcd/Demo.git</developerConnection>
-   <tag>my-demo-ms-0.0.2</tag>
+   <tag>my-demo-ms-1.99.9</tag>
   </scm>
   
  
@@ -349,51 +356,9 @@
 	  </profile>
 
 	  
-	<!-- for use with maven professional edition
-	<profile>
-		  <id>release_artifact1</id>
-		  <build>
-			 <plugins>
-				<plugin>
-				   <groupId>org.sonatype.plugins</groupId>
-				   <artifactId>nexus-staging-maven-plugin</artifactId>
-				   <version>1.5.1</version>
-				   <executions>
-					  <execution>
-						 <id>default-deploy</id>
-						 <phase>deploy</phase>
-						 <goals>
-							<goal>deploy</goal>
-						 </goals>
-					  </execution>
-				   </executions>
-				   <configuration>
-					  <serverId>maven-release-repository-Test</serverId>
-					  <nexusUrl>http://localhost:8082/nexus/</nexusUrl>
-					  <skipStaging>true</skipStaging>
-				   </configuration>
-				</plugin>
-			 </plugins>
-		  </build>
-		</profile> -->
 	  
 	  
-	  <profile>
-	  <id>release_artifact</id>
-	  <build>
-     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>2.5.3</version>
-        <!--<configuration>
-          <tagBase>https://svn.mycompany.com/repos/myapplication/releases</tagBase>
-        </configuration> -->
-      </plugin>
-    </plugins>
-    </build>
-	  </profile>
-	  
+  
 	  
 	  
  </profiles>
@@ -475,12 +440,25 @@
 		   </configuration>
 		</plugin> -->
 		
+		
+		<!--parsedVersion.nextMajorVersion
+parsedVersion.nextMinorVersion
+parsedVersion.nextIncrementalVersion
+
+To increment the last fragment of the version from e.g. 1.0.0 to 1.0.1 you can simply do that:
+
+mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} versions:commit
+
+-->
+
+		
 		<plugin>
 		   <artifactId>maven-release-plugin</artifactId>
 		   <version>2.5.3</version>
 		    <configuration>
-				<releaseVersion>1.99.9</releaseVersion>
-				<developmentVersion>1.100.0-SNAPSHOT</developmentVersion>
+				<tag>v${artefact.releaseVersion}</releaseVersion>
+				<developmentVersion>${artefact.developmentVersion}</developmentVersion>
+				<releaseVersion>v${artefact.releaseVersion}</releaseVersion>
 			</configuration>
 		   <dependencies>
 			  <dependency>
