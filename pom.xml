@@ -3,7 +3,7 @@
 
   <groupId>ie.aib.msf</groupId>
   <artifactId>my-demo-ms</artifactId>
-  <version>v</version>
+  <version>1.1.0-SNAPSHOT</version>
   <organization>
     <name>Allied Irish Bank PLC</name>
   </organization>
@@ -443,8 +443,8 @@
 	  </plugins>
 		
 	   <pluginManagement>
-	         <plugins />
-        </pluginManagement>   
+	       <plugins />
+       </pluginManagement>   
     </build>
 
   <dependencies>
