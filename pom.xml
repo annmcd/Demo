@@ -426,7 +426,7 @@
 		   <artifactId>maven-release-plugin</artifactId>
 		   <version>2.5.3</version>
 		    <configuration>
-				<tag>v@${project.version}
+				<tag>v@${project.version}</tag>
 				<releaseVersion>v${releaseVer}</releaseVersion>
 				<developmentVersion>v${devVer}</developmentVersion>
 			</configuration>
