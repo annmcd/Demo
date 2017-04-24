@@ -17,7 +17,7 @@
 		<maven.surefire.plugin.version>2.4.3</maven.surefire.plugin.version>
 
  	<!-- Artefact Release Properties -->
-		<artefact.releaseVersion></artefactreleaseVersion>
+		<artefact.releaseVersion></artefact.releaseVersion>
 		<artefact.developmenVersion></artefact.developmenVersion>
 		
 		
@@ -441,15 +441,6 @@
 		</plugin> -->
 		
 		
-		<!--parsedVersion.nextMajorVersion
-parsedVersion.nextMinorVersion
-parsedVersion.nextIncrementalVersion
-
-To increment the last fragment of the version from e.g. 1.0.0 to 1.0.1 you can simply do that:
-
-mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} versions:commit
-
--->
 
 		
 		<plugin>
