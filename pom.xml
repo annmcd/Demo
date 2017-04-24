@@ -3,14 +3,14 @@
 
   <groupId>ie.aib.msf</groupId>
   <artifactId>my-demo-ms</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <organization>
     <name>Allied Irish Bank PLC</name>
   </organization>
   <url>https://aib.ie</url>
   
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   
   	 <!--AMD start properties -->
 		<!--<despipeline.version />-->
@@ -18,6 +18,7 @@
 
  	<!-- Artefact Release Properties -->
 		<releaseVersion />
+		<developmentVersion />
         
 		
 	<!--AMD Provide Sonar with the jacoco output -->
@@ -428,6 +429,7 @@
 		    <configuration>
 				<tag>v${releaseVersion}</tag>
 				<releaseVersion>v${releaseVersion}</releaseVersion>
+				<releaseVersion>v${developmentVersion}</releaseVersion>
 			</configuration>
 		   <dependencies>
 			  <dependency>
