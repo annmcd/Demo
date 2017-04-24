@@ -478,6 +478,10 @@
 		<plugin>
 		   <artifactId>maven-release-plugin</artifactId>
 		   <version>2.5.3</version>
+		    <configuration>
+				<releaseVersion>1.99.9</releaseVersion>
+				<developmentVersion>1.100.0-SNAPSHOT</developmentVersion>
+			</configuration>
 		   <dependencies>
 			  <dependency>
 				 <groupId>org.apache.maven.scm</groupId>
