@@ -3,7 +3,7 @@
 
   <groupId>ie.aib.msf</groupId>
   <artifactId>my-demo-ms</artifactId>
-  <version>0.0.7-SNAPSHOT</version>
+  <version>0.0.6-SNAPSHOT</version>
   <organization>
     <name>Allied Irish Bank PLC</name>
   </organization>
@@ -377,7 +377,24 @@
 		  </build>
 		</profile> -->
 	  
-
+	  
+	  <profile>
+	  <id>release_artifact</id>
+	  <build>
+     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.3</version>
+        <!--<configuration>
+          <tagBase>https://svn.mycompany.com/repos/myapplication/releases</tagBase>
+        </configuration> -->
+      </plugin>
+    </plugins>
+    </build>
+	  </profile>
+	  
+	  
 	  
  </profiles>
 
@@ -468,16 +485,6 @@
 				 <version>1.9.5</version>
 			  </dependency>
 		   </dependencies>
-		    <configuration>
-				<packaging>jar</packaging>
-				<generatePom>true</generatePom>
-				<url>${project.distributionManagement.releasesRepository.url}</url>
-				<artifactId>${project.artifactId}</artifactId>
-				<groupId>${project.groupId}</groupId>
-				<version>${project.version}</version>
-				<file>${project.build.directory}/${project.artifactId}-${project.version}.jar</file>
-				<developmentVersion>${project.build.directory}/${project.artifactId}-${project.version}-SNAPSHOT</developmentVersion>
-			 </configuration>
 		</plugin>
 		
 	  </plugins>
