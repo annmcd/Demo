@@ -17,9 +17,8 @@
 		<maven.surefire.plugin.version>2.4.3</maven.surefire.plugin.version>
 
  	<!-- Artefact Release Properties -->
-		<semanticVersion />
-        <buildVersion>+build</buildVersion>
-		<devVersion>      </devVersion>
+		<releaseVersion />
+        
 		
 	<!--AMD Provide Sonar with the jacoco output -->
 		<failFlag>true</failFlag> <!-- allows us to test pipeline with projects which contain inadequate quality standards and proceed regardless-->
@@ -427,8 +426,8 @@
 		   <artifactId>maven-release-plugin</artifactId>
 		   <version>2.5.3</version>
 		    <configuration>
-				<tag>v${project.version}</tag>
-				<releaseVersion>v${project.version}</releaseVersion>
+				<tag>v${releaseVersion}</tag>
+				<releaseVersion>v${releaseVersion}</releaseVersion>
 			</configuration>
 		   <dependencies>
 			  <dependency>
