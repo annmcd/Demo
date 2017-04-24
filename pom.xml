@@ -3,7 +3,7 @@
 
   <groupId>ie.aib.msf</groupId>
   <artifactId>my-demo-ms</artifactId>
-  <version>1.99.9-SNAPSHOT</version>
+  <version>v</version>
   <organization>
     <name>Allied Irish Bank PLC</name>
   </organization>
@@ -17,8 +17,8 @@
 		<maven.surefire.plugin.version>2.4.3</maven.surefire.plugin.version>
 
  	<!-- Artefact Release Properties -->
-		<artefact.releaseVersion></artefact.releaseVersion>
-		<artefact.developmenVersion></artefact.developmenVersion>
+		<artefact.releaseVersion />
+		<artefact.developmenVersion />
 		
 		
 	<!--AMD Provide Sonar with the jacoco output -->
@@ -61,7 +61,7 @@
    <connection>scm:git:https://github.com/annmcd/Demo.git</connection>
    <url>http://github.com/annmcd</url>
    <developerConnection>scm:git:https://github.com/annmcd/Demo.git</developerConnection>
-   <tag>my-demo-ms-1.99.9</tag>
+   <tag>v</tag>
   </scm>
   
  
