@@ -354,6 +354,14 @@
 			</build>
 	  </profile>
 	  
+	  
+	    <profile>
+        <id>ReleaseProfile</id>
+        <properties>
+            <developmentBuild>false</developmentBuild>
+            <releaseBuild>true</releaseBuild>
+        </properties>
+    </profile>
  </profiles>
 
  
@@ -418,8 +426,8 @@
 		   <artifactId>maven-release-plugin</artifactId>
 		   <version>2.5.3</version>
 		    <configuration>
-				<!--<url>${project.distributionManagement.repository.url}</url> -->
-				<releaseProfiles>maven-release-repository-Test</releaseProfiles>
+				<url>${project.distributionManagement.repository.url}</url> 
+				<releaseProfiles>releaseProfile</releaseProfiles>
 				<tag>${releaseVer}</tag>
 				<releaseVersion>${releaseVer}</releaseVersion>
 				<developmentVersion>${devVer}</developmentVersion>
