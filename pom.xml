@@ -20,7 +20,9 @@
  	<!-- Artefact Release Properties -->
 		<releaseVer />
 		<devVer />
-        
+
+		<project.scm.id>my-scm-server<project.scm.id>
+
 		
 	<!--AMD Provide Sonar with the jacoco output -->
 		<failFlag>true</failFlag> <!-- allows us to test pipeline with projects which contain inadequate quality standards and proceed regardless-->
