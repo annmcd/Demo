@@ -60,8 +60,9 @@
   <scm>
    <connection>scm:git:https://github.com/annmcd/Demo.git</connection>
    <url>http://github.com/annmcd</url>
-   <developerConnection>scm:git:https://github.com/annmcd/Demo.git</developerConnection>
-    <tag>HEAD</tag>
+  <!-- <developerConnection>scm:git:https://github.com/annmcd/Demo.git</developerConnection>-->
+  <developerConnection>scm:git:git@github.com:annmcd/Demo.git</developerConnection>
+   <tag>HEAD</tag>
   </scm>
   
  
