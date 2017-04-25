@@ -355,15 +355,9 @@
 	  </profile>
 	  
 	  
-	    <profile>
-        <id>releaseProfile</id>
-        <properties>
-            <developmentBuild>false</developmentBuild>
-            <releaseBuild>true</releaseBuild>
-        </properties>
-    </profile>
- </profiles>
 
+ 
+ 
  
   <!-- Deployment to Nexus-->
   <distributionManagement>
@@ -427,7 +421,6 @@
 		   <version>2.5.3</version>
 		    <configuration>
 				<url>${project.distributionManagement.repository.url}</url> 
-				<releaseProfiles>releaseProfile</releaseProfiles>
 				<tag>${releaseVer}</tag>
 				<releaseVersion>${releaseVer}</releaseVersion>
 				<developmentVersion>${devVer}</developmentVersion>
