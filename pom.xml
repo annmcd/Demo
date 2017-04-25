@@ -18,8 +18,8 @@
 		<maven.surefire.plugin.version>2.4.3</maven.surefire.plugin.version>
 
 		<project.scm.id>git-server</project.scm.id>
-</devVer>
-</releaseVer>
+<devVer></devVer>
+<releaseVer></releaseVer>
 		
 	<!--AMD Provide Sonar with the jacoco output -->
 		<failFlag>true</failFlag> <!-- allows us to test pipeline with projects which contain inadequate quality standards and proceed regardless-->
