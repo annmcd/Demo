@@ -328,14 +328,15 @@
 	  <profile>
 			<id>deploy-snapshot</id> 
 			<build>
+			<properties> 
+				<skipTests>true</skipTests> 
+			 </properties>
 			<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-release-plugin</artifactId>
 					<version>2.5.3</version>
-					 <properties> 
-						<skipTests>true</skipTests> 
-					  </properties> 
+		 
 					  <executions>
 						<execution>
 							<phase>default-deploy</phase>
