@@ -3,7 +3,7 @@
 
   <groupId>ie.aib.msf</groupId>
   <artifactId>my-demo-ms</artifactId>
-  <version>2.0.7</version>
+  <version>2.0.7-SNAPSHOT</version>
   <organization>
     <name>Allied Irish Bank PLC</name>
   </organization>
