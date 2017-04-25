@@ -328,9 +328,7 @@
 	  <profile>
 			<id>deploy-snapshot</id> 
 			<build>
-			<properties> 
-				<skipTests>true</skipTests> 
-			 </properties>
+			
 			<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
