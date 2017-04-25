@@ -390,26 +390,23 @@
  
   <build>
   	   <plugins>
-	   
-	   
 	   <plugin>
-				   <artifactId>maven-release-plugin</artifactId>
-				   <version>2.5.3</version>
-				   								<configuration>
-								<url>${project.distributionManagement.repository.url}</url> 
-								<tag>${releaseVer}</tag>
-								<releaseVersion>${releaseVer}</releaseVersion>
-								<developmentVersion>${devVer}</developmentVersion>
-							</configuration>
-
-						<dependencies>
-							  <dependency>
-								 <groupId>org.apache.maven.scm</groupId>
-								 <artifactId>maven-scm-provider-gitexe</artifactId>
-								 <version>1.9.5</version>
-							  </dependency>
-						</dependencies>
-				</plugin>
+		   <artifactId>maven-release-plugin</artifactId>
+			<version>2.5.3</version>
+			<configuration>
+			<url>${project.distributionManagement.repository.url}</url> 
+			<tag>${releaseVer}</tag>
+			<releaseVersion>${releaseVer}</releaseVersion>
+			<developmentVersion>${devVer}</developmentVersion>
+		   </configuration>
+			<dependencies>
+			  <dependency>
+				 <groupId>org.apache.maven.scm</groupId>
+				 <artifactId>maven-scm-provider-gitexe</artifactId>
+				 <version>1.9.5</version>
+				</dependency>
+			</dependencies>
+	</plugin>
 	   
 	   
 		 <plugin>
