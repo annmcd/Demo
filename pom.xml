@@ -57,10 +57,10 @@
   
   <scm>
    <connection>scm:git:https://github.com/annmcd/Demo.git</connection>
-   <url>http://github.com/annmcd</url>
+   <url>http://github.com/annmcd/Demo.git</url>
   <developerConnection>scm:git:https://github.com/annmcd/Demo.git</developerConnection>
  <!-- <developerConnection>scm:git:git@github.com:annmcd/Demo.git</developerConnection> -->
-   <tag>my-demo-ms-1.0.31</tag>
+   <tag>my-demo-ms-1.0.33</tag>
   </scm>
   
  
