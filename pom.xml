@@ -356,7 +356,7 @@
 	  
 	  
 	    <profile>
-        <id>ReleaseProfile</id>
+        <id>releaseProfile</id>
         <properties>
             <developmentBuild>false</developmentBuild>
             <releaseBuild>true</releaseBuild>
