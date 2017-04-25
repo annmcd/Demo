@@ -353,11 +353,9 @@
 			</plugins>
 			</build>
 	  </profile>
-	  
-	  
+	</profiles>
+	  	  
 
- 
- 
  
   <!-- Deployment to Nexus-->
   <distributionManagement>
