@@ -3,7 +3,8 @@
 
   <groupId>ie.aib.msf</groupId>
   <artifactId>my-demo-ms</artifactId>
-  <version>2.0.16-SNASPHOT</version>
+  
+  <version>1.0.20-SNAPSHOT</version>
   <organization>
     <name>Allied Irish Bank PLC</name>
   </organization>
@@ -324,7 +325,7 @@
 		</profile>
 	
 	
-		 <profile>
+	  <profile>
 			<id>deploy-snapshot</id> 
 			<build>
 			<plugins>
@@ -351,8 +352,44 @@
 					</executions>
 				</plugin>
 			</plugins>
-			</build>
+		</build>
 	  </profile>
+	  
+	  
+	  
+	  <profile>
+		  <id>release-artefact</id> 
+			<build>
+			<plugins>
+				<plugin>
+				   <artifactId>maven-release-plugin</artifactId>
+				   <version>2.5.3</version>
+				   	<executions>
+						<execution>
+							<phase>default-deploy</phase>
+							<goals>
+								<goal>deploy</goal>
+							</goals>
+							<configuration>
+								<url>${project.distributionManagement.repository.url}</url> 
+								<tag>${releaseVer}</tag>
+								<releaseVersion>${releaseVer}</releaseVersion>
+								<developmentVersion>${devVer}</developmentVersion>
+							</configuration>
+							</execution>
+				    	</executions>
+						<dependencies>
+							  <dependency>
+								 <groupId>org.apache.maven.scm</groupId>
+								 <artifactId>maven-scm-provider-gitexe</artifactId>
+								 <version>1.9.5</version>
+							  </dependency>
+						</dependencies>
+				</plugin>
+			  </plugins>
+			</build>
+		  </profile>
+		  
 	</profiles>
 	  	  
 
@@ -414,7 +451,7 @@
 			<version>2.8</version>
 		 </plugin>
 
-		<plugin>
+		<!--<plugin>
 		   <artifactId>maven-release-plugin</artifactId>
 		   <version>2.5.3</version>
 		    <configuration>
@@ -430,7 +467,7 @@
 				 <version>1.9.5</version>
 			  </dependency>
 		   </dependencies>
-		</plugin>
+		</plugin> -->
 		
 	  </plugins>
 	
